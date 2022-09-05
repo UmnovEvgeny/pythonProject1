@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def all_candidates():
+    """Главная страница"""
     candidates = functions.get_all()
     result = '\n'
     for candidate in candidates:
@@ -19,6 +20,7 @@ def all_candidates():
 
 @app.route("/candidates/<int:pk>")
 def candidates_pk(pk):
+    """Стрница кандидатов по pk"""
     candidate = functions.get_by_pk(pk)
     link = candidate['picture']
     result = '\n'
@@ -32,6 +34,7 @@ def candidates_pk(pk):
 
 @app.route("/skills/<skill_name>")
 def candidates_skills(skill_name):
+    """Страница кандидатов по навыку"""
     candidates = functions.get_by_skill(skill_name)
     result = '\n'
     for candidate in candidates:
@@ -43,4 +46,3 @@ def candidates_skills(skill_name):
 
 
 app.run()
-
