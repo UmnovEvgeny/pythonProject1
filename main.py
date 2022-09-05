@@ -43,3 +43,4 @@ def candidates_skills(skill_name):
 
 
 app.run()
+
